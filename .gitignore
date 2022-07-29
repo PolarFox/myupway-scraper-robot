@@ -14,3 +14,7 @@ temp/
 *.zip
 .~lock*
 */work-items-out/*
+/*.html
+/*.xml
+/*.txt
+/devdata
