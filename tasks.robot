@@ -2,8 +2,15 @@
 Documentation       Playwright template.
 
 Library             RPA.Browser.Playwright
+Library             RPA.Robocorp.Vault
 
 
 *** Tasks ***
-Minimal task
-    Open Browser    https://robocorp.com/docs/development-guide/browser/playwright
+Login Task
+    ${secret}=    Get Secret    credentials
+    RPA.Browser.Playwright.Open Browser    https://myupway.com
+    RPA.Browser.Playwright.Focus    id=Email
+    Keyboard Input    insertText    ${secret}[username]
+    Focus    id=Password
+    Keyboard Input    insertText    ${secret}[password]
+    Click    .LoginButton
